@@ -55,7 +55,9 @@ $color: (
 }
 
 @mixin btn {
+  border-radius: 5%;
   padding: 10px 0;
+  width: 220px; //220-250px
   @content;
 }
 
