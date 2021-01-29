@@ -135,6 +135,144 @@ table {
   border-spacing: 0;
 }
 
+.bubble_btnn {
+  margin: 0 10px;
+}
+
+.button, .button_y {
+  -webkit-font-smoothing: antialiased;
+  background-color: #2f4f4f;
+  width: 200px;
+  border: none;
+  color: #fff;
+  display: inline-block;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  user-select: none;
+  letter-spacing: 1px;
+  padding: 15px 0;
+  transition: all 0.1s ease-out;
+  border-radius: 10px;
+}
+
+.button--bubble, .button_y--bubble {
+  position: relative;
+  z-index: 2;
+}
+
+.button--bubble:hover + .button--bubble__effect-container .circle, .button_y--bubble:hover + .button--bubble__effect-container .circle {
+  background: #2f4f4f;
+}
+
+.button--bubble:hover + .button--bubble__effect-container .button, .button_y--bubble:hover + .button--bubble__effect-container .button {
+  background: #2f4f4f;
+}
+
+.button--bubble:active + .button--bubble__effect-container, .button_y--bubble:active + .button--bubble__effect-container {
+  transform: scale(0.35);
+}
+
+.button--bubble__container, .button_y--bubble__container {
+  position: relative;
+  display: inline-block;
+}
+
+.button--bubble__container .effect-button, .button_y--bubble__container .effect-button {
+  position: absolute;
+  width: 50%;
+  height: 25%;
+  top: 50%;
+  left: 25%;
+  z-index: 1;
+  transform: translateY(-50%);
+  background: #2f4f4f;
+  transition: background 0.1s ease-out;
+}
+
+.button--bubble__effect-container {
+  position: absolute;
+  display: block;
+  width: 200%;
+  height: 400%;
+  top: -150%;
+  left: -50%;
+  filter: url("#goo");
+  transition: all 0.1s ease-out;
+  pointer-events: none;
+}
+
+.button--bubble__effect-container .circle {
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  border-radius: 25px;
+  background: #2f4f4f;
+  transition: background 0.1s ease-out;
+}
+
+.button--bubble__effect-container .circle.top-left {
+  top: 40%;
+  left: 27%;
+}
+
+.button--bubble__effect-container .circle.bottom-right {
+  bottom: 40%;
+  right: 27%;
+}
+
+.goo {
+  position: absolute;
+  visibility: hidden;
+  width: 1px;
+  height: 1px;
+}
+
+.button--bubble__container {
+  top: 50%;
+  margin-top: -25px;
+}
+
+@keyframes hue-rotate {
+  from {
+    -moz-filter: hue-rotate(0);
+    -ms-filter: hue-rotate(0);
+    filter: hue-rotate(0);
+  }
+  to {
+    -moz-filter: hue-rotate(360deg);
+    -ms-filter: hue-rotate(360deg);
+    filter: hue-rotate(360deg);
+  }
+}
+
+.button_y {
+  color: #2f4f4f;
+  background-color: #d9a420;
+}
+
+.button_y:hover + .button--bubble__effect-container .circle {
+  background: #d9a420;
+}
+
+.button_y:hover + .button--bubble__effect-container .button {
+  background: #d9a420;
+}
+
+.button_y__container {
+  position: relative;
+  display: inline-block;
+}
+
+.button_y__container .effect-button {
+  background: #d9a420;
+}
+
+.button_y .circle {
+  background: #d9a420;
+}
+
 *,
 *:before,
 *::after {
@@ -148,6 +286,9 @@ table {
 body {
   font-family: "Noto Sans TC", "sans-serif";
   color: #2f4f4f;
+  letter-spacing: 0.1em;
+  line-height: 1.8;
+  font-size: 1.6rem;
 }
 
 html {
@@ -165,7 +306,6 @@ img {
 }
 
 section {
-  width: 100vw;
   text-align: center;
 }
 
@@ -173,6 +313,28 @@ article {
   max-width: 1200px;
   margin: 0 auto;
   overflow: hidden;
+  padding: 20px;
+}
+
+.btn_green a {
+  background-color: #2f4f4f;
+  color: #ffffff;
+  margin: 0px auto;
+  border-radius: 10px;
+  padding: 15px 0;
+  width: 200px;
+  text-decoration: none;
+  display: block;
+}
+
+.btn_yellow a {
+  background-color: #d9a420;
+  margin: 0px auto;
+  border-radius: 10px;
+  padding: 15px 0;
+  width: 200px;
+  text-decoration: none;
+  display: block;
 }
 
 .bread {
@@ -181,8 +343,8 @@ article {
   display: flex;
 }
 
-full_wrapper {
-  background-image: url(img/gray_bg.png);
+.full_wrapper {
+  background-image: url(../img/gray_bg.png);
   background-repeat: repeat-y;
   background-position: center center;
   background-size: cover;

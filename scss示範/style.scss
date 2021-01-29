@@ -1,5 +1,28 @@
+//這個是取消全部樣式的css
 @import "sass/reset";
+//這個是bubble_btn的css，記得html要引用bubble_btn動畫效果的js & TweenMax
+@import "sass/bubblebtn";
 
+//----------------以上不要動！！，以下開放自己的sass，按照自己的區塊放(可自己更動區塊名字)-------------------------
+//首頁
+
+//商品頁＆商品內頁
+
+// //客製化多肉 ＆ 心理測驗
+// @import "sass/custom";
+// @import "sass/mindtest";
+
+//手作課程
+
+//部落格
+
+//購物車＆結帳系統
+
+//會員中心 & 會員登入
+
+//Q&A
+
+//----------------共用scss開始-------------------------
 $html_fontsize: 62.5%;
 $font_family: "Noto Sans TC", "sans-serif";
 $fontsize: (
@@ -45,7 +68,7 @@ $color: (
 }
 
 @mixin section {
-  width: 100vw;
+  // width: 100vw;
   text-align: center;
 }
 
@@ -55,14 +78,14 @@ $color: (
 }
 
 @mixin btn {
-  border-radius: 5%;
-  padding: 10px 0;
-  width: 220px; //220-250px
+  border-radius: 10px;
+  padding: 15px 0;
+  width: 200px; //220-250px
   @content;
 }
 
 @mixin full_wrapper {
-  background-image: url(img/gray_bg.png);
+  background-image: url(../img/gray_bg.png);
   background-repeat: repeat-y;
   background-position: center center;
   background-size: cover;
@@ -77,10 +100,14 @@ $color: (
 body {
   font-family: $font_family;
   color: map-get($color, "main_g");
+  letter-spacing: 0.1em;
+  line-height: 1.8;
+  font-size: map-get($fontsize, "normall");
 }
 
 html {
   font-size: $html_fontsize;
+  // font-size: 16px;
 }
 
 a {
@@ -99,6 +126,26 @@ section {
 article {
   @include article;
   overflow: hidden;
+  padding: 20px;
+}
+
+.btn_green {
+  a {
+    background-color: map-get($color, "main_g");
+    color: map-get($color, "white");
+    margin: 0px auto;
+    @include btn;
+    @include a_link;
+  }
+}
+
+.btn_yellow {
+  a {
+    background-color: map-get($color, "yellow");
+    margin: 0px auto;
+    @include btn;
+    @include a_link;
+  }
 }
 
 .ex {
@@ -111,7 +158,7 @@ article {
   display: flex;
 }
 
-full_wrapper {
+.full_wrapper {
   @include full_wrapper;
 }
 
