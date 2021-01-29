@@ -15,3 +15,8 @@ ex. 假設負責首頁的話
 　main_list-on
  
 　main_list-active
+
+3.RWD斷點 目前暫定
+  996
+  768
+  414
